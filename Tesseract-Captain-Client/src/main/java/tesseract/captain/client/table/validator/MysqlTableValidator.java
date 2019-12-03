@@ -72,7 +72,7 @@ public class MysqlTableValidator implements ITableValidator {
                         }
                     }
                 }
-                return false;
+                flag = false;
             }
         } catch (SQLException e) {
             e.printStackTrace();
