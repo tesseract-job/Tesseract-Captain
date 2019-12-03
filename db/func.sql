@@ -43,6 +43,7 @@ create table tesseract_captain_field
     id           int unsigned auto_increment primary key,
     entity_id    int unsigned not null comment '所属实体ID',
     name         varchar(20)  not null comment '属性名',
+    type         tinyint      not null comment '属性类型: int,string等',
     creator      varchar(20)  not null comment '创建者',
     create_time  bigint       not null comment '创建时间',
     update_time  bigint       not null comment '更新时间',
