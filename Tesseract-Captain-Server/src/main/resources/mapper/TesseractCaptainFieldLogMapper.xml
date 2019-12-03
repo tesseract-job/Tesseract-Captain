@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="captain.sever.mapper.TesseractCaptainFieldLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="captain.sever.entity.TesseractCaptainFieldLog">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="entity_id" property="entityId" />
+        <result column="entity_name" property="entityName" />
+        <result column="leader_id" property="leaderId" />
+        <result column="leader_name" property="leaderName" />
+        <result column="product_id" property="productId" />
+        <result column="product_name" property="productName" />
+        <result column="creator" property="creator" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, entity_id, entity_name, leader_id, leader_name, product_id, product_name, creator, create_time
+    </sql>
+
+</mapper>

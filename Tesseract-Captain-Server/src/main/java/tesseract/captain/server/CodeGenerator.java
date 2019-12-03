@@ -16,37 +16,57 @@ import java.util.List;
  * 代码生成器。大家随意使用。注意下面的路径和数据库配置，表名配置
  */
 public class CodeGenerator {
+    public static final String DB_NAME = "tesseract_captain";
+    public static final String URL = "jdbc:mysql://localhost:3306/" + DB_NAME + "?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC&useJDBCCompliantTimezoneShift=true&allowPublicKeyRetrieval=true";
+    public static final String USERNAME = "root";
+    public static final String PASSWORD = "root";
+    public static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+
+    public static final String AUTHOR = "nickle";
+    public static final String PARENT_PACKAGE = "tesseract.captain.server";
+    public static final String PROJECT_PATH = System.getProperty("user.dir") + File.separator + "Tesseract-Captain-Server";
+    public static final boolean fileOverride = false;
+
+
+    public static final String[] TABLE_NAME_ARR = {
+            "tesseract_captain_product",
+            "tesseract_captain_user",
+            "tesseract_captain_entity",
+            "tesseract_captain_field",
+            "tesseract_captain_entity_method_relation",
+            "tesseract_captain_entity_method_arg",
+            "tesseract_captain_entity_relation",
+            "tesseract_captain_field_log",
+            "tesseract_captain_relation_log"};
+
 
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
-
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir") + File.separator + "tesseract-admin";
-        gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("nickle");
+        gc.setOutputDir(PROJECT_PATH + "/src/main/java");
+        gc.setAuthor(AUTHOR);
         gc.setOpen(false);
         gc.setSwagger2(true);
         gc.setBaseColumnList(true);
         gc.setBaseResultMap(true);
         //谨慎操作哈，这玩意儿会覆盖已创建的文件
-        //gc.setFileOverride(true);
+        gc.setFileOverride(fileOverride);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/tesseract?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
-        // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("HJ.1995.11.6");
+        dsc.setUrl(URL);
+        dsc.setDriverName(DRIVER_NAME);
+        dsc.setUsername(USERNAME);
+        dsc.setPassword(PASSWORD);
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(null);
-        pc.setParent("admin");
+        pc.setParent(PARENT_PACKAGE);
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -69,7 +89,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return PROJECT_PATH + "/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
         /*
@@ -108,22 +128,8 @@ public class CodeGenerator {
         //strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
-//        strategy.setInclude(
-//                "tesseract_job_detail",
-//                "tesseract_trigger",
-//                "tesseract_executor",
-//                "tesseract_executor_trigger_link",
-//                "tesseract_lock",
-//                "tesseract_user"
-//        );
         //需要生成的表
-        strategy.setInclude(
-                "tesseract_menu_btn"
-//                "tesseract_menu_resource",
-//                "tesseract_role",
-//                "tesseract_role_resources",
-//                "tesseract_user_role"
-        );
+        strategy.setInclude(TABLE_NAME_ARR);
 
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");

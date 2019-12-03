@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="captain.sever.mapper.TesseractCaptainEntityRelationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="captain.sever.entity.TesseractCaptainEntityRelation">
+        <id column="id" property="id" />
+        <result column="from_entity_id" property="fromEntityId" />
+        <result column="from_entity_name" property="fromEntityName" />
+        <result column="to_entity_id" property="toEntityId" />
+        <result column="to_entity_name" property="toEntityName" />
+        <result column="type" property="type" />
+        <result column="creator" property="creator" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="description" property="description" />
+        <result column="product_id" property="productId" />
+        <result column="product_name" property="productName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, from_entity_id, from_entity_name, to_entity_id, to_entity_name, type, creator, create_time, update_time, description, product_id, product_name
+    </sql>
+
+</mapper>
