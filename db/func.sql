@@ -65,6 +65,7 @@ create table tesseract_captain_entity_method_relation
     create_time      bigint       not null comment '创建时间',
     update_time      bigint       not null comment '更新时间',
     description      varchar(255) comment '描述',
+    return_type      tinyint      not null comment '返回参数类型,映射后期补充',
     product_id       int unsigned not null comment '所属产品id',
     product_name     varchar(20)  not null comment '所属产品名字'
 );

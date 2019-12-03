@@ -14,13 +14,14 @@
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
         <result column="description" property="description" />
+        <result column="return_type" property="returnType" />
         <result column="product_id" property="productId" />
         <result column="product_name" property="productName" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, from_entity_id, from_entity_name, to_entity_id, to_entity_name, name, creator, create_time, update_time, description, product_id, product_name
+        id, from_entity_id, from_entity_name, to_entity_id, to_entity_name, name, creator, create_time, update_time, description, return_type,product_id, product_name
     </sql>
 
 </mapper>

@@ -55,6 +55,10 @@ public class TesseractCaptainEntityMethodRelation implements Serializable {
     @ApiModelProperty(value = "描述")
     private String description;
 
+    @ApiModelProperty(value = "返回参数类型")
+    private Integer returnType;
+
+
     @ApiModelProperty(value = "所属产品id")
     private Integer productId;
 

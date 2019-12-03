@@ -11,6 +11,14 @@
 
     <artifactId>Tesseract-Captain-Server</artifactId>
     <description>前端页面业务，采用Spring Data JPA来做ORM层，多表关联，请在业务层编写，尽量不写关联查询</description>
+    <properties>
+        <springfox.swagger.version>2.9.2</springfox.swagger.version>
+        <springfox.swagger.ui.version>2.9.2</springfox.swagger.ui.version>
+        <swagger.bootstrap-ui.version>1.9.3</swagger.bootstrap-ui.version>
+        <springfox.bean.validators.version>2.9.2</springfox.bean.validators.version>
+        <swagger.annotations.version>1.5.22</swagger.annotations.version>
+        <swagger.models.version>1.5.22</swagger.models.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -42,6 +50,44 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.28</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- Swagger API文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.swagger.ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>${swagger.bootstrap-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-bean-validators</artifactId>
+            <version>${springfox.bean.validators.version}</version>
+        </dependency>
+        <!-- # 增加两个配置解决 NumberFormatException -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.22</version>
         </dependency>
 
         <dependency>
