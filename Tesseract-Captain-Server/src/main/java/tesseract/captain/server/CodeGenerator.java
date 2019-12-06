@@ -51,7 +51,7 @@ public class CodeGenerator {
         gc.setSwagger2(true);
         gc.setBaseColumnList(true);
         gc.setBaseResultMap(true);
-        //谨慎操作哈，这玩意儿会覆盖已创建的文件
+        // 谨慎操作哈，这玩意儿会覆盖已创建的文件
         gc.setFileOverride(fileOverride);
         mpg.setGlobalConfig(gc);
 
@@ -107,7 +107,6 @@ public class CodeGenerator {
 
         // 配置模板
         TemplateConfig templateConfig = new TemplateConfig();
-
         // 配置自定义输出模板
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
         // templateConfig.setEntity("templates/entity2.java");
